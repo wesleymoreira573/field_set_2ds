@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Currículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        fieldset {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+        legend {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            padding: 0 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="number"], 
+        input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+        .radio-group input[type="radio"], .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+            width: auto;
+        }
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        .col {
+            flex: 1;
+        }
+        .small {
+            width: 100px;
+        }
+        .medium {
+            width: 150px;
+        }
+        .large {
+            width: 200px;
+        }
+        .note {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Currículo</h1>
+        <form action="#" method="post">
+            
+            <!-- DADOS PESSOAIS -->
+            <fieldset>
+                <legend>DADOS PESSOAIS</legend>
+                
+                <!-- IDENTIFICAÇÃO -->
+                <fieldset>
+                    <legend>IDENTIFICAÇÃO</legend>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Nacionalidade:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nacionalidade" value="brasileira" required> Brasileira</label>
+                            <label><input type="radio" name="nacionalidade" value="estrangeira"> Estrangeira</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" maxlength="14">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="passaporte">Número Passaporte:</label>
+                        <input type="text" id="passaporte" name="passaporte">
+                    </div>
+                </fieldset>
+                
+                <!-- DADOS DE NASCIMENTO -->
+                <fieldset>
+                    <legend>DADOS DE NASCIMENTO</legend>
+                    <div class="form-group">
+                        <label for="data_nascimento">Data:</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pais_nascimento">País:</label>
+                        <select id="pais_nascimento" name="pais_nascimento" required>
+                            <option value="">Selecione um país</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="colombia">Colômbia</option>
+                            <option value="mexico">México</option>
+                            <option value="peru">Peru</option>
+                            <option value="venezuela">Venezuela</option>
+                            <option value="eua">Estados Unidos</option>
+                            <option value="canada">Canadá</option>
+                            <option value="alemanha">Alemanha</option>
+                            <option value="franca">França</option>
+                            <option value="italia">Itália</option>
+                            <option value="espanha">Espanha</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="reino_unido">Reino Unido</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="uf_nascimento">UF:</label>
+                        <select id="uf_nascimento" name="uf_nascimento">
+                            <option value="">Selecione um estado</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="se">Sergipe</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cidade_nascimento">Cidade:</label>
+                        <input type="text" id="cidade_nascimento" name="cidade_nascimento" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>SEXO:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="sexo" value="feminino" required> Feminino</label>
+                            <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <!-- IDENTIDADE -->
+                <fieldset>
+                    <legend>IDENTIDADE</legend>
+                    <div class="form-group">
+                        <label for="numero_identidade">Número:</label>
+                        <input type="text" id="numero_identidade" name="numero_identidade">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orgao_emissor">Órgão Emissor:</label>
+                        <input type="text" id="orgao_emissor" name="orgao_emissor">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="uf_identidade">UF:</label>
+                        <select id="uf_identidade" name="uf_identidade">
+                            <option value="">Selecione um estado</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="se">Sergipe</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="data_identidade">Data:</label>
+                        <input type="date" id="data_identidade" name="data_identidade">
+                    </div>
+                </fieldset>
+                
+                <!-- FILIAÇÃO -->
+                <fieldset>
+                    <legend>FILIAÇÃO</legend>
+                    <div class="form-group">
+                        <label for="nome_pai">Nome do Pai:</label>
+                        <input type="text" id="nome_pai" name="nome_pai">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nome_mae">Nome da Mãe:</label>
+                        <input type="text" id="nome_mae" name="nome_mae">
+                    </div>
+                </fieldset>
+            </fieldset>
+            
+            <!-- ENDEREÇO -->
+            <fieldset>
+                <legend>ENDEREÇO</legend>
+                
+                <!-- ENDEREÇO PROFISSIONAL -->
+                <fieldset>
+                    <legend>ENDEREÇO PROFISSIONAL</legend>
+                    <div class="form-group">
+                        <label for="instituicao">Instituição/Empresa:</label>
+                        <input type="text" id="instituicao" name="instituicao">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="logradouro_profissional">Logradouro:</label>
+                        <select id="logradouro_profissional" name="logradouro_profissional">
+                            <option value="">Selecione</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="rua">Rua</option>
+                            <option value="praca">Praça</option>
+                            <option value="travessa">Travessa</option>
+                            <option value="alameda">Alameda</option>
+                            <option value="beco">Beco</option>
+                            <option value="passagem">Passagem</option>
+                            <option value="estrada">Estrada</option>
+                            <option value="rodovia">Rodovia</option>
+                            <option value="vila">Vila</option>
+                            <option value="largo">Largo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="endereco_profissional">Endereço:</label>
+                        <input type="text" id="endereco_profissional" name="endereco_profissional">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pais_profissional">País:</label>
+                        <select id="pais_profissional" name="pais_profissional">
+                            <option value="">Selecione um país</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="colombia">Colômbia</option>
+                            <option value="mexico">México</option>
+                            <option value="peru">Peru</option>
+                            <option value="venezuela">Venezuela</option>
+                            <option value="eua">Estados Unidos</option>
+                            <option value="canada">Canadá</option>
+                            <option value="alemanha">Alemanha</option>
+                            <option value="franca">França</option>
+                            <option value="italia">Itália</option>
+                            <option value="espanha">Espanha</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="reino_unido">Reino Unido</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="uf_profissional">UF:</label>
+                        <select id="uf_profissional" name="uf_profissional">
+                            <option value="">Selecione um estado</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="se">Sergipe</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="cep_profissional">CEP:</label>
+                                <input type="text" id="cep_profissional" name="cep_profissional" maxlength="9">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="cidade_profissional">Cidade:</label>
+                                <input type="text" id="cidade_profissional" name="cidade_profissional">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bairro_profissional">Bairro:</label>
+                        <input type="text" id="bairro_profissional" name="bairro_profissional">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caixa_postal_profissional">Caixa Postal:</label>
+                        <input type="text" id="caixa_postal_profissional" name="caixa_postal_profissional">
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col small">
+                            <div class="form-group">
+                                <label for="ddd_profissional">DDD:</label>
+                                <input type="text" id="ddd_profissional" name="ddd_profissional" maxlength="2">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="telefone_profissional">Telefone:</label>
+                                <input type="tel" id="telefone_profissional" name="telefone_profissional">
+                            </div>
+                        </div>
+                        <div class="col small">
+                            <div class="form-group">
+                                <label for="ramal_profissional">Ramal:</label>
+                                <input type="text" id="ramal_profissional" name="ramal_profissional">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fax_profissional">Fax:</label>
+                        <input type="tel" id="fax_profissional" name="fax_profissional">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email_profissional">E-mail:</label>
+                        <input type="email" id="email_profissional" name="email_profissional">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="homepage_profissional">Homepage Institucional:</label>
+                        <input type="url" id="homepage_profissional" name="homepage_profissional">
+                    </div>
+                </fieldset>
+                
+                <!-- ENDEREÇO RESIDÊNCIAL -->
+                <fieldset>
+                    <legend>ENDEREÇO RESIDÊNCIAL</legend>
+                    <div class="form-group">
+                        <label for="logradouro_residencial">Logradouro:</label>
+                        <select id="logradouro_residencial" name="logradouro_residencial">
+                            <option value="">Selecione</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="rua">Rua</option>
+                            <option value="praca">Praça</option>
+                            <option value="travessa">Travessa</option>
+                            <option value="alameda">Alameda</option>
+                            <option value="beco">Beco</option>
+                            <option value="passagem">Passagem</option>
+                            <option value="estrada">Estrada</option>
+                            <option value="rodovia">Rodovia</option>
+                            <option value="vila">Vila</option>
+                            <option value="largo">Largo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="endereco_residencial">Endereço:</label>
+                        <input type="text" id="endereco_residencial" name="endereco_residencial">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pais_residencial">País:</label>
+                        <select id="pais_residencial" name="pais_residencial">
+                            <option value="">Selecione um país</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="colombia">Colômbia</option>
+                            <option value="mexico">México</option>
+                            <option value="peru">Peru</option>
+                            <option value="venezuela">Venezuela</option>
+                            <option value="eua">Estados Unidos</option>
+                            <option value="canada">Canadá</option>
+                            <option value="alemanha">Alemanha</option>
+                            <option value="franca">França</option>
+                            <option value="italia">Itália</option>
+                            <option value="espanha">Espanha</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="reino_unido">Reino Unido</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="uf_residencial">UF:</label>
+                        <select id="uf_residencial" name="uf_residencial">
+                            <option value="">Selecione um estado</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="se">Sergipe</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="cep_residencial">CEP:</label>
+                                <input type="text" id="cep_residencial" name="cep_residencial" maxlength="9">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="cidade_residencial">Cidade:</label>
+                                <input type="text" id="cidade_residencial" name="cidade_residencial">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bairro_residencial">Bairro:</label>
+                        <input type="text" id="bairro_residencial" name="bairro_residencial">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caixa_postal_residencial">Caixa Postal:</label>
+                        <input type="text" id="caixa_postal_residencial" name="caixa_postal_residencial">
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col small">
+                            <div class="form-group">
+                                <label for="ddd_residencial">DDD:</label>
+                                <input type="text" id="ddd_residencial" name="ddd_residencial" maxlength="2">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="telefone_residencial">Telefone:</label>
+                                <input type="tel" id="telefone_residencial" name="telefone_residencial">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fax_residencial">Fax:</label>
+                        <input type="tel" id="fax_residencial" name="fax_residencial">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email_residencial">E-mail:</label>
+                        <input type="email" id="email_residencial" name="email_residencial">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="homepage_residencial">Homepage Pessoal:</label>
+                        <input type="url" id="homepage_residencial" name="homepage_residencial">
+                    </div>
+                </fieldset>
+                
+                <!-- ENDEREÇO PREFERENCIAL -->
+                <fieldset>
+                    <legend>ENDEREÇO PREFERENCIAL PARA CORRESPONDÊNCIA</legend>
+                    <div class="form-group">
+                        <div class="radio-group">
+                            <label><input type="radio" name="endereco_preferencial" value="residencial" required> Residencial</label>
+                            <label><input type="radio" name="endereco_preferencial" value="profissional"> Profissional</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+            
+            <!-- FORMAÇÃO ACADÊMICA/TITULAÇÃO -->
+            <fieldset>
+                <legend>FORMAÇÃO ACADÊMICA/TITULAÇÃO</legend>
+                
+                <!-- FORMAÇÃO -->
+                <fieldset>
+                    <legend>FORMAÇÃO</legend>
+                    <div class="form-group">
+                        <label>Nível: <span class="note">(Selecione o seu maior nível de formação)</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nivel_formacao" value="graduacao" required> Graduação</label>
+                            <label><input type="radio" name="nivel_formacao" value="aperfeicoamento"> Aperfeiçoamento</label>
+                            <label><input type="radio" name="nivel_formacao" value="especializacao"> Especialização</label>
+                            <label><input type="radio" name="nivel_formacao" value="mestrado"> Mestrado</label>
+                            <label><input type="radio" name="nivel_formacao" value="doutorado"> Doutorado</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carga_horaria">Carga Horária:</label>
+                        <input type="number" id="carga_horaria" name="carga_horaria" min="0">
+                    </div>
+                </fieldset>
+                
+                <!-- INSTITUIÇÃO/CURSO -->
+                <fieldset>
+                    <legend>INSTITUIÇÃO/CURSO</legend>
+                    <div class="form-group">
+                        <label for="instituicao_curso">Instituição:</label>
+                        <input type="text" id="instituicao_curso" name="instituicao_curso">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nome_curso">Nome do Curso:</label>
+                        <input type="text" id="nome_curso" name="nome_curso">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Status do Curso:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="status_curso" value="em_andamento" required> Em andamento</label>
+                            <label><input type="radio" name="status_curso" value="titulo_obtido"> Com título obtido</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inicio_curso">Início:</label>
+                                <input type="number" id="inicio_curso" name="inicio_curso" min="1900" max="2100">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="conclusao_curso">Conclusão:</label>
+                                <input type="number" id="conclusao_curso" name="conclusao_curso" min="1900" max="2100">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="obtencao_titulo">Obtenção do título:</label>
+                                <input type="number" id="obtencao_titulo" name="obtencao_titulo" min="1900" max="2100">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="titulo_monografia">Título da Monografia/Dissertação/Tese:</label>
+                        <textarea id="titulo_monografia" name="titulo_monografia" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nome_orientador">Nome Completo do Orientador:</label>
+                        <input type="text" id="nome_orientador" name="nome_orientador">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Bolsa:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="bolsa" value="sim" required> Sim</label>
+                            <label><input type="radio" name="bolsa" value="nao"> Não</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="entidade_financeira">Entidade Financeira:</label>
+                        <input type="text" id="entidade_financeira" name="entidade_financeira">
+                    </div>
+                </fieldset>
+            </fieldset>
+            
+            <!-- ATUAÇÃO PROFISSIONAL -->
+            <fieldset>
+                <legend>ATUAÇÃO PROFISSIONAL</legend>
+                
+                <!-- INSTITUIÇÃO DE TRABALHO -->
+                <fieldset>
+                    <legend>INSTITUIÇÃO DE TRABALHO</legend>
+                    <div class="form-group">
+                        <label for="instituicao_trabalho">Instituição/Empresa:</label>
+                        <input type="text" id="instituicao_trabalho" name="instituicao_trabalho">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sigla_instituicao">Sigla:</label>
+                        <input type="text" id="sigla_instituicao" name="sigla_instituicao">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ATIVIDADE(S) EXERCIDA(S) NA INSTITUIÇÃO:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="atividades[]" value="conselhos"> Conselhos, comissões e consultoria</label>
+                            <label><input type="checkbox" name="atividades[]" value="direcao"> Direção e administração</label>
+                            <label><input type="checkbox" name="atividades[]" value="ensino"> Ensino</label>
+                            <label><input type="checkbox" name="atividades[]" value="estagio"> Estágio</label>
+                            <label><input type="checkbox" name="atividades[]" value="extensao"> Extensão universitária</label>
+                            <label><input type="checkbox" name="atividades[]" value="pesquisa"> Pesquisa e desenvolvimento</label>
+                            <label><input type="checkbox" name="atividades[]" value="servicos"> Serviços técnicos e especializados</label>
+                            <label><input type="checkbox" name="atividades[]" value="treinamentos"> Treinamentos ministrados</label>
+                            <label><input type="checkbox" name="atividades[]" value="outras"> Outras atividades técnico-científicas</label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <!-- VÍNCULO INSTITUCIONAL -->
+                <fieldset>
+                    <legend>VÍNCULO INSTITUCIONAL</legend>
+                    <div class="form-group">
+                        <label>Período:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="periodo_vinculo" value="anterior" required> Anterior</label>
+                            <label><input type="radio" name="periodo_vinculo" value="atual"> Atual</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inicio_mes">Início - Mês:</label>
+                                <select id="inicio_mes" name="inicio_mes">
+                                    <option value="">Selecione</option>
+                                    <option value="01">Janeiro</option>
+                                    <option value="02">Fevereiro</option>
+                                    <option value="03">Março</option>
+                                    <option value="04">Abril</option>
+                                    <option value="05">Maio</option>
+                                    <option value="06">Junho</option>
+                                    <option value="07">Julho</option>
+                                    <option value="08">Agosto</option>
+                                    <option value="09">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inicio_ano">Início - Ano:</label>
+                                <input type="number" id="inicio_ano" name="inicio_ano" min="1900" max="2100">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="fim_mes">Fim - Mês:</label>
+                                <select id="fim_mes" name="fim_mes">
+                                    <option value="">Selecione</option>
+                                    <option value="01">Janeiro</option>
+                                    <option value="02">Fevereiro</option>
+                                    <option value="03">Março</option>
+                                    <option value="04">Abril</option>
+                                    <option value="05">Maio</option>
+                                    <option value="06">Junho</option>
+                                    <option value="07">Julho</option>
+                                    <option value="08">Agosto</option>
+                                    <option value="09">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="fim_ano">Fim - Ano:</label>
+                                <input type="number" id="fim_ano" name="fim_ano" min="1900" max="2100">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo_vinculo">Tipo de Vínculo:</label>
+                        <select id="tipo_vinculo" name="tipo_vinculo">
+                            <option value="">Selecione</option>
+                            <option value="servidor_publico">Servidor Público</option>
+                            <option value="celetista">Celetista</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carga_horaria_semanal">Carga Horária Semanal:</label>
+                        <input type="number" id="carga_horaria_semanal" name="carga_horaria_semanal" min="0" max="168">
+                    </div>
+                </fieldset>
+            </fieldset>
+            
+            <button type="submit" class="submit-btn">Enviar Formulário</button>
+        </form>
+    </div>
+</body>
+</html> 
